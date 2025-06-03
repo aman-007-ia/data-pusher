@@ -1,7 +1,9 @@
 const { Sequelize } = require('sequelize');
+require('dotenv').config();
+
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: 'data.sqlite'
+  storage: process.env.DB_NAME || 'data.sqlite',
 });
 
 const Account = require('./account')(sequelize);

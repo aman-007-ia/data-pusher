@@ -5,6 +5,8 @@ const destinationRoutes = require('./routes/destinationRoutes');
 const dataHandlerRoutes = require('./routes/dataHandlerRoutes');
 
 const app = express();
+require('dotenv').config();
+
 app.use(express.json());
 
 // Routes will go here later

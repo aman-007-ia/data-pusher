@@ -1,9 +1,12 @@
 const { Account, Destination } = require('../models');
 const axios = require('axios');
 const querystring = require('querystring');
+require('dotenv').config();
 
 exports.handleIncomingData = async (req, res) => {
-  const token = req.headers['cl-x-token'];
+  const tokenHeaderKey = process.env.TOKEN_HEADER || 'cl-x-token';
+  const token = req.headers[tokenHeaderKey.toLowerCase()]; // header keys are lowercase in Node
+
   const data = req.body;
 
   // Validation
