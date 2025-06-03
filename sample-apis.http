@@ -1,0 +1,38 @@
+### Create Account
+POST http://localhost:3000/accounts
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "account_name": "John's Web App",
+  "website": "https://johnsapp.com"
+}
+
+### Create Destination for Account (replace with actual account ID)
+POST http://localhost:3000/destinations/REPLACE_ACCOUNT_ID
+Content-Type: application/json
+
+{
+  "url": "https://webhook.site/your-custom-url",
+  "method": "POST",
+  "headers": {
+    "APP_ID": "1234APPID1234",
+    "APP_SECTET": "b4ae28e6f8629a3a92d6fda5a9450029676361475a2f14ef972e614a600e5ffa",
+    "ACTION": "user.update",
+    "Content-Type": "application/json",
+    "Accept": "*"
+  }
+}
+
+### Get Destinations by Account
+GET http://localhost:3000/destinations/REPLACE_ACCOUNT_ID
+
+### Push Incoming Data (replace token)
+POST http://localhost:3000/server/incoming_data
+Content-Type: application/json
+CL-X-TOKEN: REPLACE_SECRET_TOKEN
+
+{
+  "event": "user.created",
+  "user_id": 789
+}

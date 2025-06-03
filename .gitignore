@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# SQLite DB
+*.sqlite
+
+# Environment variables (if any)
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# VSCode settings (optional)
+.vscode/
